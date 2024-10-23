@@ -79,12 +79,12 @@ function limpiarResultado() {
 }
 
 function reproducirAudioDrums() {
-    const audio = new Audio("/audios/drums.mp3");
+    const audio = new Audio("./audios/drums.mp3");
     audio.play();
 }
 
 function reproducirAudioSuccess() {
-    new Audio("/audios/success.mp3").play();
+    new Audio("./audios/success.mp3").play();
 }
 
 function restaurarEstado() {
