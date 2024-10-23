@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f0f0f0;
+    /* Color normal del botón */
+    /* Duración de la transición */
+    border-radius: 10px;
+    border-style: none;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: #fff;
+    animation-duration: 0.5s;
+    animation-name: pressed;
+    transform: scale(1.2);
+}
+
+.pressed {
+    background-color: #0056b3;
+    color: #fff;
+    /* Cambia el color según tu preferencia */
+    transition: background-color 0.7s;
+    /* Duración de la transición */
+}
+
+.caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.6s;
+    display: none;
+    /* Duración de la transición */
+}
+
+
+#resultado {
+    padding: 1rem;
+    font-size: 2rem;
+    transition: font-size 5s;
+    /* Duración de la transición del tamaño */
+    color: #000;
+    /* Color inicial del texto */
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+#historial {
+    align-items: center;
+    background-color: darksalmon;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#historial p {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 5px;
+    font-weight: bolder;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+}
