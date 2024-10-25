@@ -179,18 +179,6 @@ button:hover {
     border-radius: 10px;
 }
 
-#historial {
-    align-items: center;
-    background-color: skyblue;
-    color: black;
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
 #historial p {
     display: inline-block;
     padding: 5px;
@@ -198,4 +186,42 @@ button:hover {
     border: 1px solid black;
     border-radius: 5px;
     padding: 15px;
+}
+
+@media only screen and (max-width: 390px) {
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    #titulo {
+        font-size: 1rem;
+    }
+
+    .miContainer {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .contenedorInputs {
+        flex-direction: column;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #resultado {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #historial p {
+        padding: 10px;
+        font-size: 1rem;
+    }
 }
