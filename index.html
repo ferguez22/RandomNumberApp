@@ -5,18 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App de Números Aleatorios</title>
-    <link rel="stylesheet" href="style.css">
-    </title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
-    <h1>App de Números Aleatorios</h1>
-    <button id="generar">Generar número ganador 🥳 </button>
-    <div class="caja">
-        <p id="resultado"></p>
-    </div>
-    <div id="historial"></div> <!-- Nuevo elemento para mostrar el historial -->
+    <header class="header sticky-top header-color ">
+        <nav>
+            <ul>
+                <li><a href="#" id="btnCarrito" style="font-size: larger;"><i class="fa-solid fa-shopping-cart"></i></a>
+                </li>
+                <li class="titulo text-center text-uppercase " style="font-size: larger;">Bar Bahía</li>
+                <li><a href="#" style="font-size: larger;"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="wrapper">
+
+
+
+        <div class="miContainer">
+            <h1>Generador de números Aleatorios</h1>
+
+            <div class="contenedorInputs">
+                <div class="mb-3">
+                    <input placeholder="Minimo" type="number" id="minimo" class="form-control">
+                </div>
+                <div>
+                    <input placeholder="Maximo" type="number" id="maximo" class="form-control">
+                </div>
+            </div>
+
+            <button id="generar">Generar número ganador 🥳 </button>
+            <div class="caja ">
+                <p id="resultado"></p>
+            </div>
+            <div id="historial" class=""></div> <!-- Nuevo elemento para mostrar el historial -->
+
+
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

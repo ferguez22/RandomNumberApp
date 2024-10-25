@@ -2,14 +2,21 @@ const resultado = document.getElementById("resultado");
 const generar = document.getElementById("generar");
 const caja = document.querySelector(".caja"); // Selecciona la caja
 const historial = document.getElementById("historial"); // Nuevo elemento para mostrar el historial
-
+const minimo = document.getElementById("minimo");
+const maximo = document.getElementById("maximo");
 
 let isGenerating = false;
 let ultimoNumero = null; // Variable para almacenar el último número generado
 let numerosGenerados = []; // Array para almacenar los números generados
-
-
 generar.addEventListener("click", generarNumeroAleatorio);
+
+
+function obtenerValores() {
+    return {
+        minimo: minimo.value,
+        maximo: maximo.value
+    }
+}
 
 function generarNumeroAleatorio() {
     try {
@@ -21,12 +28,15 @@ function generarNumeroAleatorio() {
                 cambiarEstadoBoton();
                 limpiarResultado();
 
+                // Obtener los valores mínimo y maximo
+                const { minimo, maximo } = obtenerValores()
+
                 // Mostrar la caja
                 caja.style.display = "flex"; // Cambiar a visible
 
                 // Generar número cada 70 milisegundos
                 const interval = setInterval(() => {
-                    const numero = Math.floor(Math.random() * 300);
+                    const numero = Math.floor(Math.random() * (maximo - minimo) + minimo);
                     mostrarResultado(numero);
                     ultimoNumero = numero; // Guardar el último número generado
                 }, 70);
@@ -39,9 +49,9 @@ function generarNumeroAleatorio() {
                     restaurarEstado(); // Restaurar el estado al final
                     isGenerating = false; // Permitir nuevos clics
                     confetti({
-                        particleCount: 3000, // Aumentar la cantidad de confetti
-                        spread: 900, // Ajustar la dispersión
-                        origin: { y: 0.6 }, // Ajustar la posición de origen
+                        particleCount: 10000, // Aumentar la cantidad de confetti
+                        spread: 1000, // Reducir la dispersión para evitar el círculo
+                        origin: { y: 0.5 }, // Ajustar la posición de origen al centro verticalmente
                         colors: ['#ff0', '#0f0', '#00f', '#f00'], // Colores del confetti
                     });
                 }, 3000); // Cambiar a 6000 para que coincida con el tiempo total
@@ -55,7 +65,7 @@ function generarNumeroAleatorio() {
 function mostrarUltimoNumero() {
     try {
         resultado.textContent = ultimoNumero; // Mostrar el último número generado
-        resultado.style.fontSize = "6rem"; // Mantener el tamaño grande del texto
+        resultado.style.fontSize = "8rem"; // Mantener el tamaño grande del texto
         numerosGenerados.push(ultimoNumero); // Agregar el número al array
         mostrarHistorial(); // Mostrar el historial actualizado
     } catch (error) {
