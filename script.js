@@ -60,46 +60,79 @@ function generarNumeroAleatorio() {
 }
 
 function mostrarUltimoNumero() {
-    resultado.textContent = ultimoNumero; // Mostrar el último número generado
-    resultado.style.fontSize = "8rem"; // Mantener el tamaño grande del texto
-    numerosGenerados.push(ultimoNumero); // Agregar el número al array
-    mostrarHistorial(); // Mostrar el historial actualizado
+    try {
+        numerosGenerados.push(ultimoNumero);
+        mostrarHistorial();
+    } catch (error) {
+        console.error("Error al mostrar el último número: ", error);
+    }
 }
 
 function mostrarHistorial() {
-    historial.innerHTML = ""
-    for (let numero of numerosGenerados) {
-        const p = document.createElement("p");
-        p.textContent = numero; // Mostrar cada número en el historial
-        historial.appendChild(p);
+    try {
+        historial.innerHTML = ""
+        for (let numero of numerosGenerados) {
+            const p = document.createElement("p");
+            p.textContent = numero; // Mostrar cada número en el historial
+            historial.appendChild(p);
+        }
+    } catch (error) {
+        console.error("Error al mostrar el historial: ", error);
     }
 }
 
 function mostrarResultado(numero) {
-    resultado.textContent = numero; // Mostrar el número actual
-    resultado.classList.add("resultado-generado");
-    resultado.style.fontSize = "8rem"; // Ajustar el tamaño del texto
+    try {
+        resultado.textContent = numero;
+        resultado.classList.add("resultado-generado");
+        resultado.style.fontSize = "5rem";
+    } catch (error) {
+
+    }
 }
 
 function cambiarEstadoBoton() {
-    generar.classList.add("pressed");
+    try {
+        generar.classList.add("pressed");
+
+    } catch (error) {
+        console.error("Error al cambiar el estado del botón: ", error);
+    }
 }
 
 function limpiarResultado() {
-    resultado.textContent = "";
+    try {
+        resultado.textContent = "";
+
+    } catch (error) {
+        console.error("Error al limpiar el resultado: ", error);
+    }
 }
 
 function reproducirAudioDrums() {
-    const audio = new Audio("./audios/drums.mp3");
-    audio.play();
+    try {
+        const audio = new Audio("./audios/drums.mp3");
+        audio.play();
+    } catch (error) {
+        console.error("Error al reproducir audio de drums: ", error);
+    }
 }
 
 function reproducirAudioSuccess() {
-    new Audio("./audios/success.mp3").play();
+    try {
+        new Audio("./audios/success.mp3").play();
+
+    } catch (error) {
+        console.error("Error al reproducir audio de éxito: ", error);
+    }
 }
 
 function restaurarEstado() {
-    generar.classList.remove("pressed");
-    resultado.classList.remove("resultado-generada");
-    caja.classList.remove("expandida");
+    try {
+        generar.classList.remove("pressed");
+        resultado.classList.remove("resultado-generada");
+        caja.classList.remove("expandida");
+    } catch (error) {
+        console.error("Error al restaurar el estado: ", error);
+    }
 }
