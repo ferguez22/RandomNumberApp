@@ -1,5 +1,6 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,20 +8,43 @@
     text-transform: uppercase;
 }
 
+#nombreBar {
+    font-family: 'Sriracha', cursive;
+    font-size: 4rem;
+    color: skyblue;
+}
 
 .wrapper {
+    position: relative;
+    /* Necesario para el pseudo-elemento */
     font-family: 'Montserrat', sans-serif;
+    background-image: url(./bahia.jpg);
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    /* Abarca toda la pantalla */
-    background: linear-gradient(to bottom, #8f7900 0%, #826e00 45%, #00287d 45%, #012269 70%, #680a14 70%, #5f000b 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 0;
-    /* Alineación vertical */
     align-content: center;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000c2;
+    z-index: 0;
+}
+
+.wrapper>* {
+    position: relative;
+    z-index: 1;
 }
 
 .header {
@@ -71,12 +95,11 @@
 
 .miContainer {
     padding: 20px;
-    background-color: #333333d4;
+    background: linear-gradient(135deg, #c2b202 0%, #a81c1c 100%);
     border-radius: 50px;
     width: 90%;
-    max-width: 500px;
+    max-width: 800px;
     min-height: 500px;
-    /* Cambiar height a min-height */
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -90,6 +113,7 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: bold;
+    margin-bottom: 5rem;
 }
 
 .contenedorInputs {
@@ -110,16 +134,17 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
-    background-color: #077af5;
+    background-color: #0c8f0f;
     /* Color normal del botón */
     /* Duración de la transición */
     border-radius: 10px;
     border-style: none;
-
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1.5);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0a7c0c;
     color: #fff;
     animation-duration: 0.5s;
     animation-name: pressed;
@@ -149,15 +174,15 @@ button:hover {
 #resultado {
     padding: 1rem;
     font-size: 2rem;
-    transition: font-size 7s;
+    transition: font-size 4s;
     color: white;
     border-radius: 10px;
 }
 
 #historial {
     align-items: center;
-    background: #d5b500;
-    color: white;
+    background-color: skyblue;
+    color: black;
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
@@ -168,9 +193,8 @@ button:hover {
 
 #historial p {
     display: inline-block;
-    font-size: 2rem;
     padding: 5px;
-    font-weight: bolder;
+    font-weight: lighter;
     border: 1px solid black;
     border-radius: 5px;
     padding: 15px;
