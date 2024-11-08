@@ -6,6 +6,7 @@
     box-sizing: border-box;
     padding: 0;
     text-transform: uppercase;
+    overflow-x: none;
 }
 
 #nombreBar {
@@ -38,7 +39,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000000c2;
+    background-color: #000000f8;
     z-index: 0;
 }
 
@@ -95,7 +96,6 @@
 
 .miContainer {
     padding: 20px;
-    background: linear-gradient(135deg, #c2b202 0%, #a81c1c 100%);
     border-radius: 50px;
     width: 90%;
     max-width: 800px;
